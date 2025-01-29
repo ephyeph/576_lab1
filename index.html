@@ -15,7 +15,8 @@
   require([
     "esri/config",
     "esri/Map",
-    "esri/views/MapView"],
+    "esri/views/MapView",
+    "esri/widgets/BasemapGallery"],
       function(esriConfig, Map, MapView) {   
 
   esriConfig.apiKey = "AAPTxy8BH1VEsoebNVZXo8HurAToSzqkTfSfYwvNstkcR6B4ROIes9biB3If_N2cV-B6ipYFe5GxDfRQiFgMLzTH6209fM3ClJKM-5YVMCzcOH7TQJEzY_qITLgYuQ_O9Xc5pVnekDPHAHkxAHDnvNA75kDs-EylJ1L49ZjNHnKCjyjVY6f81joHIiGPr7X5LCYlO4x-mAxxUdWzT2Z-9uZmZbE5hUIYo-Gxuw7YZTMPp-UiNH6nce_c6lf5QtuX-hPTAT1_drTNujqi";
@@ -29,7 +30,14 @@
   zoom: 12, // Adjust zoom level for appropriate scale
   container: "viewDiv" // Div element
   });
+
+  const basemapGallery = new BasemapGallery({
+    view: view
  });  
+
+ view.ui.add(basemapGallery, "top-right");
+});
+
 </script>
 
 <!-- Full screen map-->
